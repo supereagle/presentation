@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>3W of DevOps</title>
+
+    <meta name="description" content="Slides: 3W of DevOps">
+    <meta name="author" content="@supereagle">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../../css/reveal.css">
+    <link rel="stylesheet" href="../../css/theme/wx.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section style="margin-top:2%" data-markdown>
+            <script type="text/template">
+                # 3W of *DevOps*
+
+                ### [乐金明](https://github.com/supereagle)
+
+                <!--<small>
+                    <a href="https://github.com/supereagle">乐金明</a>
+                </small>-->
+
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Agenda
+
+                1. *W*hat is DevOps
+                2. *W*hy need DevOps
+                3. *W*ay to DevOps
+                4. When DevOps Meets With Docker
+
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### What is DevOps?
+
+                <section>
+                    <img src="img/elephant.png" style="width: 500px;"/>
+                </section>
+
+                <section>
+                    DevOps is a *software development* and *delivery process* that emphasizes *communication* and
+                    *collaboration* between product management, software development, operations professionals and
+                    close alignment with *business objectives*.  </br> -- Wikipedia
+                </section>
+
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### DevOps = Dev + Ops？
+
+                <img src="img/devops.png" style="width: 500px;"/>
+
+                Developer, Tester, Operator, Project Manager, Architect, ......
+                <!-- .element: class="fragment" -->
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### DevOps = CI/CD？
+
+                <img src="img/cicd.png" style="width: 1000px;"/>
+                <!-- .element: class="fragment" -->
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### DevOps = Tools？
+
+                <img src="img/tools.png" style="width: 500px;"/>
+                <!-- .element: class="fragment" -->
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### DevOps = Culture + Process + Tools
+
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Why need DevOps?
+
+                * High requirement for services
+                  * Non-interrupted
+                  * Rapid iteration
+                * Automation
+                  * 5x8 -> 7x24
+                  * Reduce human errors
+                * Micro services
+                * Lean startup
+                * Time to market
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### 让天下没有苦逼的程序员
+
+                * Developer
+                  * Implement feature
+                  * Fix bug
+                  * Code quality
+
+                <!-- .element: class="fragment" -->
+
+                * Tester
+                  * Design test case
+                  * Automation test code
+                  * Little manual test
+
+                <!-- .element: class="fragment" -->
+
+                * Operator
+                  * SRE
+                  * Write tools
+                  * Setup platform
+
+                <!-- .element: class="fragment" -->
+
+                * Manager
+                  * Make product and sprint backlog
+                  * View reports
+                  * Approve release
+
+                <!-- .element: class="fragment" -->
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Way to DevOps?
+
+                * Bottom-UP(*Preferred*): Teams DevOps -> Enterprise DevOps -> Other Teams DevOps
+                * Top-Down：Enterprise DevOps -> Teams DevOps
+                <!-- .element: class="fragment" -->
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Build DevOps Team
+
+                <!--<section>
+                    <ul>
+                        <li>Two-Pizza Team</li>
+                        <li>Sprint</li>
+                        <li>Scrum</li>
+                        <li>Kanban</li>
+                        <li>Retrospective</li>
+                        <li>All-round skillset</li>
+                    </ul>
+                </section>-->
+
+                <section>
+                    <p>
+                        <li>Two-Pizza Team</li>
+                    </p>
+
+                    <img src="img/pizza-team.png" style="width: 500px;"/>
+                </section>
+
+                <section>
+                    <p>
+                        <li>Sprint</li>
+                    </p>
+
+                    <img src="img/sprint.png" style="width: 500px;"/>
+                </section>
+
+                <section>
+                    <p>
+                        <li>Scrum</li>
+                    </p>
+
+                    <img src="img/standup-meeting.png" style="width: 450px;"/>
+                    <img src="img/plank-meeting.png" style="width: 450px;"/>
+                </section>
+
+                <section>
+                    <p>
+                        <li>Kanban</li>
+                    </p>
+
+                    <img src="img/kanban.png" style="width: 500px;"/>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>Retrospective</li>
+                        <li>Full skillset</li>
+                    </ul>
+                </section>
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Build DevOps Culture
+
+                * Sharing: Responsibility and success
+                * Communication
+                * Cooperation
+                * Geek: Hack everything
+                * Engineer: Instead of programmer or developer
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Build Automatic Process
+
+                *Process is built on tools*
+
+                <section>
+                    <h2>CI: Continuous Integration</h2>
+
+                    <ul>
+                        <li>*Stages*: code, compile, unit test, code scan, package, build image</li>
+                        <li>*Visualization*: status, log, test results, static code check, code coverage</li>
+                        <li>*Auto trigger*: SCM webhook, timer</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>CD: Continuous Delivery</h2>
+
+                    <ul>
+                        <li>*Stages*: deploy, SIT, UAT, ..., release</li>
+                        <li>*Environments*: test, staging, pre-production, production</li>
+                        <li>*Deploy Policy*: auto deploy, approve</li>
+                        <li>*Challenges*: service register and discovery, configuration, release policy, rollback</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>CO: Continuous Operation</h2>
+
+                    <ul>
+                        <li>*Platform*: Auto scaling, health check, monitor, log collection, alter, disaster tolerance, ...</li>
+                        <li>*SLA*: Service Level Agreement</li>
+                    </ul>
+                </section>
+
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Build Faster FeedBack Loop
+
+                <img src="img/feedback.png" style="width: 600px;"/>
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Metrics for DevOps
+
+                * Deployment Frequency
+                * Deployment Success Rate
+                * Defect Fix Time
+                * Recovery Time
+                * Business Delivery Time
+                * Automation Rate
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### When DevOps Meets With Docker?
+
+                <img src="img/docker.png" style="width: 600px;"/>
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### What Does Docker Bring?
+
+                * Cheap environments
+                * Consistent environments
+                * Standardized and simplified delivery
+                * Container ecosystem
+            </script>
+        </section>
+
+        <section data-markdown>
+            <script type="text/template">
+                ### Summary
+
+                <img src="img/devops-movement.png" style="width: 600px;"/>
+            </script>
+        </section>
+
+        <section style="text-align: left;">
+            <h1>THE END</h1>
+
+            <h5>乐金明</h5>
+            <small>
+                <a href="https://supereagle.github.io">Blog</a> /
+                <a href="https://github.com/supereagle">GitHub</a>
+            </small>
+        </section>
+    </div>
+</div>
+
+<pre style="display:none"><code> force highlight.js work </code></pre>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: '../../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '../../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '../../plugin/highlight/highlight.js', condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../../plugin/zoom-js/zoom.js', async: true },
+            { src: '../../plugin/notes/notes.js', async: true }
+        ]
+    });
+
+</script>
+
+<script type="text/javascript">
+    function codeEditor(){
+        var nodes = document.querySelectorAll("code");
+        for (var i = 0; i < nodes.length; i++) {
+            nodes[i].setAttribute("contenteditable", '');
+        }
+        console.log('code editable now.');
+    }
+    window.codeEditor = codeEditor;
+
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            codeEditor();
+        },1000)
+    })
+</script>
+<script>
+    // GA
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+</body>
+</html>
